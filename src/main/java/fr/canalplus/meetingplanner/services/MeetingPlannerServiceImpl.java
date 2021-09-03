@@ -42,7 +42,7 @@ public class MeetingPlannerServiceImpl implements MeetingPlannerService {
         LocalDateTime slotStart = LocalDateTime.parse(reservation.getStartSlot());
         DayOfWeek day = slotStart.getDayOfWeek();
         //check if the date is not earlier than the current date or if it is not a weekend
-        if(day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY || slotStart.isBefore(LocalDateTime.now())){
+        if(day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY || slotStart.isBefore(LocalDateTime.now()) || slotStart.getHour() > 20 || slotStart.getHour() < 8 ){
             throw new InvalidSlotException("invalid slot");
         }
 
