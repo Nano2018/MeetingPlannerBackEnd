@@ -102,8 +102,8 @@ public class MeetingPlannerServiceImpl implements MeetingPlannerService {
     }
 
     @Override
-    public boolean isRoomContainAllNeedsEquipments(Set<Equipment> roomEquipment, Set<Equipment> needs){
-        return roomEquipment.containsAll(needs);
+    public boolean isRoomContainAllNeedsEquipments(Set<Equipment> roomEquipment, Set<Equipment> meetingNeeds){
+        return roomEquipment.containsAll(meetingNeeds);
     }
 
     @Override

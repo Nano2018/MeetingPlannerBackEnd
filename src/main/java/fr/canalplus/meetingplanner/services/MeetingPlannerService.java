@@ -15,8 +15,8 @@ import java.util.Set;
 public interface MeetingPlannerService {
     RoomDto getAvailableRoom(ReservationDto reservation) throws UnknownMeetingTypeException, InvalidSlotException, NoRoomAvailableException;
     boolean isRoomAvailableAtSlot(LocalDateTime startSlot, Set<Slot> slots);
-    boolean isRoomContainAllNeedsEquipments(Set<Equipment> roomEquipment, Set<Equipment> needs);
+    boolean isRoomContainAllNeedsEquipments(Set<Equipment> roomEquipment, Set<Equipment> meetingNeeds);
     boolean isAvailableReserveEquipments(Equipment equipment);
-    int nbSameEquipments(Set<Equipment> room,Set<Equipment> needs);
+    int nbSameEquipments(Set<Equipment> roomEquipments,Set<Equipment> meetingNeeds);
     void registerRoomSlot(Room optimalRoom, LocalDateTime slotSTart);
 }
