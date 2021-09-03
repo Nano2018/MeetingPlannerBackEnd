@@ -28,24 +28,23 @@ public class RoomRepositoryTest {
     }
 
     @Test
-    public void roomFindAllVide(){
+    public void noRoom(){
         Iterable<Room> res = roomRepository.findAll();
         Assert.assertEquals(res, Collections.EMPTY_LIST);
     }
 
     @Test
-    public void roomSave(){
+    public void saveRoom(){
         Room room = new Room();
         room.setName("E1001");
         room.setCapacity(32);
         Room res =roomRepository.save(room);
-
         Assert.assertEquals(res.getName(),room.getName());
         Assert.assertEquals(res.getCapacity(),room.getCapacity());
     }
 
     @Test
-    public void roomFindAll2Rooms(){
+    public void findAllRooms(){
         Room room1 = new Room();
         room1.setName("E1001");
         room1.setCapacity(32);
@@ -53,8 +52,6 @@ public class RoomRepositoryTest {
         room2.setName("E1002");
         room2.setCapacity(32);
         roomRepository.saveAll(List.of(room1,room2));
-
-
         Collection<Room> res = (Collection)roomRepository.findAll();
         Assert.assertEquals(res.size(),2);
     }

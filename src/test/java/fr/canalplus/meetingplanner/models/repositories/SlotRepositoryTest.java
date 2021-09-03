@@ -1,6 +1,7 @@
 package fr.canalplus.meetingplanner.models.repositories;
 import fr.canalplus.meetingplanner.models.entities.Equipment;
 import fr.canalplus.meetingplanner.models.entities.Room;
+import fr.canalplus.meetingplanner.models.entities.Slot;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,9 +11,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Collection;
+import java.time.LocalDateTime;
 import java.util.Collections;
-import java.util.List;
 
 @RunWith( SpringRunner.class )
 @DataJpaTest
@@ -21,7 +21,7 @@ public class SlotRepositoryTest {
     @Autowired
     private TestEntityManager entityManager;
     @Autowired
-    EquipmentRepository equipmentRepository;
+    SlotRepository slotRepository;
 
     @Before
     public void setUp(){
@@ -29,63 +29,29 @@ public class SlotRepositoryTest {
     }
 
     @Test
-    public void slotFindAllVide(){
-        Iterable<Equipment> res = equipmentRepository.findAll();
+    public void noSlot(){
+        Iterable<Slot> res = slotRepository.findAll();
         Assert.assertEquals(res, Collections.EMPTY_LIST);
     }
 
     @Test
-    public void slotSave(){
-        Equipment equipment = new Equipment();
-        equipment.setEquipmentType("Ecran");
-        Equipment res =equipmentRepository.save(equipment);
-
-        Assert.assertEquals(res.getEquipmentType(),equipment.getEquipmentType());
-
-
+    public void saveSlot(){
+        Slot slot = new Slot();
+        slot.setStartSlot(LocalDateTime.parse("2021-09-06T09:00:00"));
+        Slot res =slotRepository.save(slot);
+        Assert.assertEquals(slot.getStartSlot(),res.getStartSlot());
 
     }
     @Test
-    public void slotFindAllSaveWithRooms(){
-        Equipment equipment = new Equipment();
-        equipment.setEquipmentType("Ecran");
+    public void saveSlotRoom(){
+        Slot slot = new Slot();
+        slot.setStartSlot(LocalDateTime.parse("2021-09-06T09:00:00"));
         Room room = new Room();
         room.setName("E1001");
-        equipment.getRooms().add(room);
-        Equipment res =equipmentRepository.save(equipment);
-
-        Assert.assertEquals(res.getEquipmentType(),equipment.getEquipmentType());
-        Assert.assertEquals(res.getRooms().size(),equipment.getRooms().size());
+        slot.getRooms().add(room);
+        Slot res =slotRepository.save(slot);
+        Assert.assertEquals(slot.getStartSlot(),res.getStartSlot());
+        Assert.assertEquals(slot.getRooms().size(),res.getRooms().size());
     }
-    @Test
-    public void slotFindAll2Equipment(){
-        Equipment equipment1 = new Equipment();
-        equipment1.setEquipmentType("Ecran");
-        Equipment equipment2 = new Equipment();
-        equipment2.setEquipmentType("Webcam");
-        Collection<Equipment> res =(Collection)equipmentRepository.saveAll(List.of(equipment1,equipment2));
-        Assert.assertEquals(res.size(),2);
-    }
-    @Test
-    public void slotFindByTypeOk(){
-        final String TYPE_EQUIPMENT = "Ecran";
-        Equipment equipment = new Equipment();
-        equipment.setEquipmentType(TYPE_EQUIPMENT);
-        equipmentRepository.save(equipment);
-
-        Equipment res = equipmentRepository.findByEquipmentType(TYPE_EQUIPMENT);
-        Assert.assertEquals(res.getEquipmentType(),TYPE_EQUIPMENT);
-    }
-    @Test
-    public void slotFindByTypeKo(){
-        final String TYPE_EQUIPMENT = "Webcam";
-        Equipment equipment = new Equipment();
-        equipment.setEquipmentType(TYPE_EQUIPMENT);
-        equipmentRepository.save(equipment);
-        Equipment res = equipmentRepository.findByEquipmentType("NO_EQUIPMENT");
-        Assert.assertNull(res);
-   
-    }
-
 
 }

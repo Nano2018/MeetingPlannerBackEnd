@@ -23,13 +23,13 @@ public class MeetingTypeRepositoryTest {
     @Before public void setUp(){}
 
     @Test
-    public void setMeetingTypeFindAllVide(){
+    public void noMeetingType(){
         Iterable<MeetingType> res = meetingTypeRepository.findAll();
         Assert.assertEquals(res, Collections.EMPTY_LIST);
     }
 
     @Test
-    public void meetingTypeSave(){
+    public void saveMeetingType(){
         MeetingType meetingType = new MeetingType();
         meetingType.setMeetingType("VC");
         MeetingType res =meetingTypeRepository.save(meetingType);
@@ -37,7 +37,7 @@ public class MeetingTypeRepositoryTest {
     }
 
     @Test
-    public void meetingTypeFindByTypeOk(){
+    public void findMeetingTypeOk(){
         final String TYPE_MEETING = "VC";
         MeetingType meetingType = new MeetingType();
         meetingType.setMeetingType(TYPE_MEETING);
@@ -47,7 +47,7 @@ public class MeetingTypeRepositoryTest {
 
     }
     @Test
-    public void meetingTypeFindByTypeKo(){
+    public void findMeetingTypeKo(){
         final String TYPE_MEETING = "VC";
         MeetingType meetingType = new MeetingType();
         meetingType.setMeetingType(TYPE_MEETING);

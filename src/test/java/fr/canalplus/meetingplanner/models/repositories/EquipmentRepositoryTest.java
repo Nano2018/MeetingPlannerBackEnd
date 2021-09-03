@@ -16,7 +16,7 @@ import java.util.List;
 
 @RunWith( SpringRunner.class )
 @DataJpaTest
-public class EquipementRepositoryTest {
+public class EquipmentRepositoryTest {
     @Autowired
     private TestEntityManager entityManager;
 
@@ -29,13 +29,13 @@ public class EquipementRepositoryTest {
     }
 
     @Test
-    public void equipmentTypeFindAllVide(){
+    public void noEquipment(){
         Iterable<Equipment> res = equipmentRepository.findAll();
         Assert.assertEquals(res, Collections.EMPTY_LIST);
     }
 
     @Test
-    public void equipmentTypeSave(){
+    public void saveEquipment(){
         Equipment equipment = new Equipment();
         equipment.setEquipmentType("Ecran");
         Equipment res =equipmentRepository.save(equipment);
@@ -43,7 +43,7 @@ public class EquipementRepositoryTest {
         Assert.assertEquals(res.getEquipmentType(),equipment.getEquipmentType());
     }
     @Test
-    public void equipmentTypeFindAllSaveWithRooms(){
+    public void saveEquipmentRooms(){
         Equipment equipment = new Equipment();
         equipment.setEquipmentType("Ecran");
         Room room = new Room();
@@ -55,7 +55,7 @@ public class EquipementRepositoryTest {
         Assert.assertEquals(res.getRooms().size(),equipment.getRooms().size());
     }
     @Test
-    public void equipmentTypeFindAll2Equipment(){
+    public void saveEquipments(){
         Equipment equipment1 = new Equipment();
         equipment1.setEquipmentType("Ecran");
         Equipment equipment2 = new Equipment();
@@ -64,7 +64,7 @@ public class EquipementRepositoryTest {
         Assert.assertEquals(res.size(),2);
     }
     @Test
-    public void equipmentTypeFindByTypeOk(){
+    public void findEquipmentOk(){
         final String TYPE_EQUIPMENT = "Ecran";
         Equipment equipment = new Equipment();
         equipment.setEquipmentType(TYPE_EQUIPMENT);
@@ -74,7 +74,7 @@ public class EquipementRepositoryTest {
         Assert.assertEquals(res.getEquipmentType(),TYPE_EQUIPMENT);
     }
     @Test
-    public void equipmentTypeFindByTypeKo(){
+    public void findEquipmentKo(){
         final String TYPE_EQUIPMENT = "Webcam";
         Equipment equipment = new Equipment();
         equipment.setEquipmentType(TYPE_EQUIPMENT);
