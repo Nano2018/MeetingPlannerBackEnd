@@ -1,0 +1,220 @@
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 8,
+  "startSlot": "2021-09-06T09:00:00",
+  "meetingType" : "VC"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 6,
+  "startSlot": "2021-09-06T09:00:00",
+  "meetingType" : "VC"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 4,
+  "startSlot": "2021-09-06T11:00:00",
+  "meetingType" : "RC"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 2,
+  "startSlot": "2021-09-06T11:00:00",
+  "meetingType" : "RS"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 9,
+  "startSlot": "2021-09-06T11:00:00",
+  "meetingType" : "SPEC"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 7,
+  "startSlot": "2021-09-06T09:00:00",
+  "meetingType" : "RC"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 9,
+  "startSlot": "2021-09-06T08:00:00",
+  "meetingType" : "VC"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 10,
+  "startSlot": "2021-09-06T08:00:00",
+  "meetingType" : "SPEC"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 5,
+  "startSlot": "2021-09-06T09:00:00",
+  "meetingType" : "SPEC"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 4,
+  "startSlot": "2021-09-06T09:00:00",
+  "meetingType" : "RS"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 8,
+  "startSlot": "2021-09-06T09:00:00",
+  "meetingType" : "RC"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 12,
+  "startSlot": "2021-09-06T11:00:00",
+  "meetingType" : "VC"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 5,
+  "startSlot": "2021-09-06T11:00:00",
+  "meetingType" : "SPEC"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 3,
+  "startSlot": "2021-09-06T08:00:00",
+  "meetingType" : "VC"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 2,
+  "startSlot": "2021-09-06T08:00:00",
+  "meetingType" : "SPEC"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 12,
+  "startSlot": "2021-09-06T08:00:00",
+  "meetingType" : "VC"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 6,
+  "startSlot": "2021-09-06T10:00:00",
+  "meetingType" : "VC"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 2,
+  "startSlot": "2021-09-06T11:00:00",
+  "meetingType" : "RS"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 4,
+  "startSlot": "2021-09-06T09:00:00",
+  "meetingType" : "RS"
+}
+###
+
+### POST request with a header
+POST localhost:8080/api/meetingsPlanner/rooms
+Content-Type: application/json
+
+{
+  "nbPersons": 7,
+  "startSlot": "2021-09-06T09:00:00",
+  "meetingType" : "RC"
+}
+###
+
